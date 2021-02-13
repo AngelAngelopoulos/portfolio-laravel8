@@ -20,7 +20,7 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .js('resources/js/validate.js', 'public/js');
 
-mix.browserSync('http://laravelPort.test');
+mix.browserSync('http://portfolio-act.test');
 
 //mix.js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps();
 

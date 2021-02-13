@@ -14,7 +14,7 @@
         @else
 
             <h2>Portfolio</h2>
-            <p>These are some of the projects I have done throughout my professional and student life: </p>
+            <p>These are some of the projects that I made throughout my professional and student life: </p>
         @endisset
       </div>
 

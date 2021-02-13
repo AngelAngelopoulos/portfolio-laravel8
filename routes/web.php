@@ -65,9 +65,10 @@ Route::post('/contact', [App\Http\Controllers\MessageController::class,'storage'
 
 //Route::get('/css/app.css', 'MessageController@style')->name('html.style');
 
-//Route::view('/resume', 'resume')->name('resume');
+Route::view('/resume', 'resume')->name('resume');
 
 Route::view('/services', 'services')->name('services');
+
 
 
 //Route::get('/pay', [App\Http\Controllers\PayController::class, 'index'])->name('pay');
@@ -76,7 +77,7 @@ Route::view('/services', 'services')->name('services');
 
 //Route::post('/pay/paymentML', [App\Http\Controllers\PayController::class, 'payML'])->name('pay.payML');
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 
 //Route::view('/', 'home')->name('home');

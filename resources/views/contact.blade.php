@@ -23,7 +23,7 @@
               <div class="email">
                 <i class="icofont-envelope"></i>
                 <h4>Email:</h4>
-                <p>contacto@angelalvarado.cf</p>
+                <p>contact@angelalvaradohdz.me</p>
               </div>
 
               <div class="phone">
