@@ -1,1 +1,374 @@
-(()=>{var o={80:()=>{!function(o){"use strict";if(o(".typed").length){var t=o(".typed").data("typed-items");t=t.split(","),new Typed(".typed",{strings:t,loop:!0,typeSpeed:100,backSpeed:50,backDelay:2e3})}function e(){AOS.init({duration:1e3,easing:"ease-in-out-back",once:!0})}o(document).on("click",".nav-menu a, .scrollto",(function(t){if(location.pathname.replace(/^\//,"")==this.pathname.replace(/^\//,"")&&location.hostname==this.hostname){t.preventDefault();var e=o(this.hash);if(e.length){var a=e.offset().top;return o("html, body").animate({scrollTop:a},1500,"easeInOutExpo"),o(this).parents(".nav-menu, .mobile-nav").length&&(o(".nav-menu .active, .mobile-nav .active").removeClass("active"),o(this).closest("li").addClass("active")),o("body").hasClass("mobile-nav-active")&&(o("body").removeClass("mobile-nav-active"),o(".mobile-nav-toggle i").toggleClass("icofont-navigation-menu icofont-close")),!1}}})),o(document).ready((function(){if(window.location.hash){var t=window.location.hash;if(o(t).length){var e=o(t).offset().top;o("html, body").animate({scrollTop:e},1500,"easeInOutExpo")}}})),o(document).on("click",".mobile-nav-toggle",(function(t){o("body").toggleClass("mobile-nav-active"),o(".mobile-nav-toggle i").toggleClass("icofont-navigation-menu icofont-close")})),o(document).click((function(t){var e=o(".mobile-nav-toggle");e.is(t.target)||0!==e.has(t.target).length||o("body").hasClass("mobile-nav-active")&&(o("body").removeClass("mobile-nav-active"),o(".mobile-nav-toggle i").toggleClass("icofont-navigation-menu icofont-close"))})),o(window).scroll((function(){o(this).scrollTop()>100?o(".back-to-top").fadeIn("slow"):o(".back-to-top").fadeOut("slow")})),o(".back-to-top").click((function(){return o("html, body").animate({scrollTop:0},1500,"easeInOutExpo"),!1})),o('[data-toggle="counter-up"]').counterUp({delay:10,time:1e3}),o(".skills-content").waypoint((function(){o(".progress .progress-bar").each((function(){o(this).css("width",o(this).attr("aria-valuenow")+"%")}))}),{offset:"80%"}),o(window).on("load",(function(){var t=o(".portfolio-container").isotope({itemSelector:".portfolio-item",layoutMode:"fitRows"});o("#portfolio-flters li").on("click",(function(){o("#portfolio-flters li").removeClass("filter-active"),o(this).addClass("filter-active"),t.isotope({filter:o(this).data("filter")}),e()})),o(document).ready((function(){o(".venobox").venobox()}))})),o(".testimonials-carousel").owlCarousel({autoplay:!0,dots:!0,loop:!0,responsive:{0:{items:1},768:{items:2},900:{items:3}}}),o(".portfolio-details-carousel").owlCarousel({autoplay:!0,dots:!0,loop:!0,items:1}),o(window).on("load",(function(){e()}))}(jQuery)},425:()=>{}},t={};function e(a){if(t[a])return t[a].exports;var n=t[a]={exports:{}};return o[a](n,n.exports,e),n.exports}e.m=o,e.x=o=>{},e.o=(o,t)=>Object.prototype.hasOwnProperty.call(o,t),(()=>{var o={773:0},t=[[80],[425]],a=o=>{},n=(n,i)=>{for(var l,s,[r,c,p,u]=i,f=0,v=[];f<r.length;f++)s=r[f],e.o(o,s)&&o[s]&&v.push(o[s][0]),o[s]=0;for(l in c)e.o(c,l)&&(e.m[l]=c[l]);for(p&&p(e),n&&n(i);v.length;)v.shift()();return u&&t.push.apply(t,u),a()},i=self.webpackChunk=self.webpackChunk||[];function l(){for(var a,n=0;n<t.length;n++){for(var i=t[n],l=!0,s=1;s<i.length;s++){var r=i[s];0!==o[r]&&(l=!1)}l&&(t.splice(n--,1),a=e(e.s=i[0]))}return 0===t.length&&(e.x(),e.x=o=>{}),a}i.forEach(n.bind(null,0)),i.push=n.bind(null,i.push.bind(i));var s=e.x;e.x=()=>(e.x=s||(o=>{}),(a=l)())})(),e.x()})();
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./resources/js/app.js":
+/*!*****************************!*\
+  !*** ./resources/js/app.js ***!
+  \*****************************/
+/***/ (() => {
+
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+//require('./bootstrap');
+//window.Vue = require('vue');
+
+/**
+ * The following block of code may be used to automatically register your
+ * Vue components. It will recursively scan this directory for the Vue
+ * components and automatically register them with their "basename".
+ *
+ * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ */
+// const files = require.context('./', true, /\.vue$/i)
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+//Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+/*
+const app = new Vue({
+    el: '#app',
+});
+*/
+!function ($) {
+  "use strict"; // Hero typed
+
+  if ($('.typed').length) {
+    var typed_strings = $(".typed").data('typed-items');
+    typed_strings = typed_strings.split(',');
+    new Typed('.typed', {
+      strings: typed_strings,
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 2000
+    });
+  } // Smooth scroll for the navigation menu and links with .scrollto classes
+
+
+  $(document).on('click', '.nav-menu a, .scrollto', function (e) {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      e.preventDefault();
+      var target = $(this.hash);
+
+      if (target.length) {
+        var scrollto = target.offset().top;
+        $('html, body').animate({
+          scrollTop: scrollto
+        }, 1500, 'easeInOutExpo');
+
+        if ($(this).parents('.nav-menu, .mobile-nav').length) {
+          $('.nav-menu .active, .mobile-nav .active').removeClass('active');
+          $(this).closest('li').addClass('active');
+        }
+
+        if ($('body').hasClass('mobile-nav-active')) {
+          $('body').removeClass('mobile-nav-active');
+          $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+        }
+
+        return false;
+      }
+    }
+  }); // Activate smooth scroll on page load with hash links in the url
+
+  $(document).ready(function () {
+    if (window.location.hash) {
+      var initial_nav = window.location.hash;
+
+      if ($(initial_nav).length) {
+        var scrollto = $(initial_nav).offset().top;
+        $('html, body').animate({
+          scrollTop: scrollto
+        }, 1500, 'easeInOutExpo');
+      }
+    }
+  });
+  $(document).on('click', '.mobile-nav-toggle', function (e) {
+    $('body').toggleClass('mobile-nav-active');
+    $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+  });
+  $(document).click(function (e) {
+    var container = $(".mobile-nav-toggle");
+
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+      if ($('body').hasClass('mobile-nav-active')) {
+        $('body').removeClass('mobile-nav-active');
+        $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+      }
+    }
+  }); // Navigation active state on scroll
+
+  /*
+    var nav_sections = $('section');
+    var main_nav = $('.nav-menu, .mobile-nav');
+     $(window).on('scroll', function() {
+      var cur_pos = $(this).scrollTop() + 200;
+       nav_sections.each(function() {
+        var top = $(this).offset().top,
+          bottom = top + $(this).outerHeight();
+         if (cur_pos >= top && cur_pos <= bottom) {
+          if (cur_pos <= bottom) {
+            main_nav.find('li').removeClass('active');
+          }
+          main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
+        }
+        if (cur_pos < 300) {
+          $(".nav-menu ul:first li:first").addClass('active');
+        }
+      });
+    });
+  */
+  // Back to top button
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $('.back-to-top').fadeIn('slow');
+    } else {
+      $('.back-to-top').fadeOut('slow');
+    }
+  });
+  $('.back-to-top').click(function () {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 1500, 'easeInOutExpo');
+    return false;
+  }); // jQuery counterUp
+
+  $('[data-toggle="counter-up"]').counterUp({
+    delay: 10,
+    time: 1000
+  }); // Skills section
+
+  $('.skills-content').waypoint(function () {
+    $('.progress .progress-bar').each(function () {
+      $(this).css("width", $(this).attr("aria-valuenow") + '%');
+    });
+  }, {
+    offset: '80%'
+  }); // Porfolio isotope and filter
+
+  /*
+  $(window).on('load', function() {
+  var portfolioIsotope = $('.portfolio-container').isotope({
+    itemSelector: '.portfolio-item',
+    layoutMode: 'fitRows'
+  });
+   $('#portfolio-flters li').on('click', function() {
+    $("#portfolio-flters li").removeClass('filter-active');
+    $(this).addClass('filter-active');
+     portfolioIsotope.isotope({
+      filter: $(this).data('filter')
+    });
+    aos_init();
+  });
+   // Initiate venobox (lightbox feature used in portofilo)
+  $(document).ready(function() {
+    $('.venobox').venobox();
+  });
+  });
+  // Testimonials carousel (uses the Owl Carousel library)
+  $(".testimonials-carousel").owlCarousel({
+  autoplay: true,
+  dots: true,
+  loop: true,
+  responsive: {
+    0: {
+      items: 1
+    },
+    768: {
+      items: 2
+    },
+    900: {
+      items: 3
+    }
+  }
+  });
+  // Portfolio details carousel
+  $(".portfolio-details-carousel").owlCarousel({
+  autoplay: true,
+  dots: true,
+  loop: true,
+  items: 1
+  });
+  */
+  // Init AOS
+
+  function aos_init() {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out-back",
+      once: true
+    });
+  }
+
+  $(window).on('load', function () {
+    aos_init();
+  });
+}(jQuery);
+
+/***/ }),
+
+/***/ "./resources/sass/app.scss":
+/*!*********************************!*\
+  !*** ./resources/sass/app.scss ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		if(__webpack_module_cache__[moduleId]) {
+/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/******/ 	// the startup function
+/******/ 	// It's empty as some runtime module handles the default behavior
+/******/ 	__webpack_require__.x = x => {}
+/************************************************************************/
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// Promise = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"/js/app": 0
+/******/ 		};
+/******/ 		
+/******/ 		var deferredModules = [
+/******/ 			["./resources/js/app.js"],
+/******/ 			["./resources/sass/app.scss"]
+/******/ 		];
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		var checkDeferredModules = x => {};
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime, executeModules] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0, resolves = [];
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					resolves.push(installedChunks[chunkId][0]);
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			for(moduleId in moreModules) {
+/******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 				}
+/******/ 			}
+/******/ 			if(runtime) runtime(__webpack_require__);
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			while(resolves.length) {
+/******/ 				resolves.shift()();
+/******/ 			}
+/******/ 		
+/******/ 			// add entry modules from loaded chunk to deferred list
+/******/ 			if(executeModules) deferredModules.push.apply(deferredModules, executeModules);
+/******/ 		
+/******/ 			// run deferred modules when all chunks ready
+/******/ 			return checkDeferredModules();
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 		
+/******/ 		function checkDeferredModulesImpl() {
+/******/ 			var result;
+/******/ 			for(var i = 0; i < deferredModules.length; i++) {
+/******/ 				var deferredModule = deferredModules[i];
+/******/ 				var fulfilled = true;
+/******/ 				for(var j = 1; j < deferredModule.length; j++) {
+/******/ 					var depId = deferredModule[j];
+/******/ 					if(installedChunks[depId] !== 0) fulfilled = false;
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferredModules.splice(i--, 1);
+/******/ 					result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
+/******/ 				}
+/******/ 			}
+/******/ 			if(deferredModules.length === 0) {
+/******/ 				__webpack_require__.x();
+/******/ 				__webpack_require__.x = x => {};
+/******/ 			}
+/******/ 			return result;
+/******/ 		}
+/******/ 		var startup = __webpack_require__.x;
+/******/ 		__webpack_require__.x = () => {
+/******/ 			// reset startup function so it can be called again when more startup code is added
+/******/ 			__webpack_require__.x = startup || (x => {});
+/******/ 			return (checkDeferredModules = checkDeferredModulesImpl)();
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	// run startup
+/******/ 	__webpack_require__.x();
+/******/ })()
+;

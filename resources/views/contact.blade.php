@@ -33,7 +33,7 @@
               </div>
 
 <div style="width: 100%">
-  <iframe width="100%" height="290px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=22.152113556502893,%20-100.97534179687501+(Mi%20ubicacion)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+  <iframe width="100%" height="290px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=San%20Luis%20Potos%C3%AD+(My%20Business%20Name)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
 </div>
 
             </div>

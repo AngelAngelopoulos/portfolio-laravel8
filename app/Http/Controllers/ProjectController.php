@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Http\Requests\SaveProjectRequest;
+
 //use App\Image;
 //use App\Images;
 use App\Http\Requests\UpdateProjectRequest;
@@ -13,6 +14,7 @@ use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+
 //use mysql_xdevapi\Exception;
 use PhpParser\Node\Expr\Array_;
 
@@ -29,7 +31,7 @@ class ProjectController extends Controller
 
 
         return view('projects.index', [
-            'projects'=> $portfolio
+            'projects' => $portfolio
         ]);
     }
 
@@ -41,7 +43,7 @@ class ProjectController extends Controller
         //$projectQuery = Project::find($project);
         //return $projectQuery[0];
 
-        return view('projects.show',[
+        return view('projects.show', [
             'project' => $project  //no ocupa inteccion ni metodo find or fail
         ]);
     }
@@ -72,7 +74,7 @@ class ProjectController extends Controller
         //return $request;
         $project = new Project($request->validated());
 
-        $image = Storage::put('img', $request->file('fileUploader'));
+        $image = Storage::put('assets/img/projects', $request->file('fileUploader'));
         $project->image = $image;//$request->file('fileUploader')->store('img');
 
         //Project::create($project);
@@ -88,7 +90,7 @@ class ProjectController extends Controller
         Storage::put($project->image, (string) $image);
         */
 
-        return redirect()->route('projects.index')->with('status','Project created sucessfully');
+        return redirect()->route('projects.index')->with('status', 'Project created sucessfully');
     }
 
     public function edit(Project $project)
@@ -105,15 +107,14 @@ class ProjectController extends Controller
 
     public function update(Project $project, UpdateProjectRequest $request)
     {
-        if ($request->hasfile('fileUploader'))
-        {
+        if ($request->hasfile('fileUploader')) {
 
 
             Storage::delete($project->image);
 
             $project->fill($request->validated());
 
-            $image = Storage::put('img', $request->file('fileUploader'));
+            $image = Storage::put('assets/img/projects', $request->file('fileUploader'));
             $project->image = $image;//$request->file('fileUploader')->store('img');
             //$project->image = $request->file('fileUploader')->store('img');
 
@@ -125,10 +126,9 @@ class ProjectController extends Controller
                 ->widen('800')->encode();
 
             Storage::put($project->image, (string) $image);*/
-        }
-        else {
+        } else {
 
-            $project->update( array_filter($request->validated()) );
+            $project->update(array_filter($request->validated()));
         }
 
         return redirect()->route('projects.show', $project)->with('status', 'Project updated successfully');

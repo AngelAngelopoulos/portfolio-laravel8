@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -238,8 +238,10 @@ return [
         'ReCaptcha' => Biscolab\ReCaptcha\Facades\ReCaptcha::class,
 
 
-
-
     ],
+
+    'b2_assets_url' => env('B2_ASSETS_URL'),
+    'b2_general_url' => env('B2_GENERAL_URL'),
+
 
 ];

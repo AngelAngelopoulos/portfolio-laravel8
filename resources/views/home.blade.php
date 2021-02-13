@@ -14,7 +14,7 @@
   @section('content')
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center" style="background: url('https://f002.backblazeb2.com/file/laravel-portfolio/img/background.jpg') top center; background-size: cover;">
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center" style="background: url({{ config('app.b2_assets_url').'img/misc/background-min.jpg' }}) top center; background-size: cover;">
     <div class="hero-container" data-aos="fade-in">
       <h1>Angel Alvarado</h1>
       <p>I'm <span class="typed" data-typed-items="Analist, Developer, Freelancer, Designer"></span></p>

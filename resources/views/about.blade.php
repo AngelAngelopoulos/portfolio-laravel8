@@ -10,18 +10,18 @@
             <div class="section-title">
                 <h2>About</h2>
                 <p>I am an enthusiastic web and software developer Jr. that studies in one of the best engineering
-                    schools in Mexico, also, I try to improve myself day by day, besides working as Cofounder in <a href="cibera.co">Cibera</a>,
-                    an IT Solutions company in San Luis Potosi, where I live. Among my greatest passions are also the
+                    schools in Mexico, also, I try to improve myself day by day, besides working as Pentester and Cofounder at <a href="cibera.co">Cibera</a>,
+                    an IT Solutions company in San Luis Potosi, where I live. Some of my greatest passions are the
                     Graphic Design, Film, Artificial Intelligence and Literature.</p>
             </div>
 
             <div class="row">
                 <div class="col-lg-4" data-aos="fade-right">
                     <img
-                        src="{{ asset('img/Angelo.jpg') /*https://drive.google.com/uc?export=view&amp;id=1D1YzNanQFsApEJSNUs7_6TQWnnYRpvy7*/}}"
+                        src="{{ config('app.b2_assets_url').'img/misc/Angelo-min.jpg' }}"
                         class="img-fluid" alt="">
                 </div>
-                <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                <div class="col-lg-8 pt-1 pt-lg-0 content" data-aos="fade-left">
                     <h3>Software &amp; Web Developer.</h3>
                     <p class="font-italic">
                         Here are some facts about me:

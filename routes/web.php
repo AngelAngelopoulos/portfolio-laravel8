@@ -18,9 +18,6 @@ use App\Http\Controllers;
 */
 
 
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,11 +32,11 @@ use App\Http\Controllers;
 
 Route::view('/', 'home')->name('home');
 
-Route::view('/about','about')->name('about');
+Route::view('/about', 'about')->name('about');
 
-Route::resource('portfolio', App\Http\Controllers\ProjectController::class)->names('projects')->parameters(['portfolio'=>'project']);
+Route::resource('portfolio', App\Http\Controllers\ProjectController::class)->names('projects')->parameters(['portfolio' => 'project']);
 
-Route::get('categories/{category}', [App\Http\Controllers\CategoryController::class,'show'])->name('categories.show');
+Route::get('categories/{category}', [App\Http\Controllers\CategoryController::class, 'show'])->name('categories.show');
 
 
 /*
@@ -59,9 +56,9 @@ Route::delete('/portfolio/{project}', 'ProjectController@destroy')->name('projec
 */
 
 
-Route::view('/contact','contact')->name('contact');
+Route::view('/contact', 'contact')->name('contact');
 
-Route::post('/contact', [App\Http\Controllers\MessageController::class,'storage'])->name('contact.storage');
+Route::post('/contact', [App\Http\Controllers\MessageController::class, 'storage'])->name('contact.storage');
 
 //Route::get('/css/app.css', 'MessageController@style')->name('html.style');
 
@@ -70,14 +67,13 @@ Route::view('/resume', 'resume')->name('resume');
 Route::view('/services', 'services')->name('services');
 
 
-
 //Route::get('/pay', [App\Http\Controllers\PayController::class, 'index'])->name('pay');
 
 //Route::post('/pay/paymentStripe', [App\Http\Controllers\PayController::class,'payStripe'])->name('pay.payStripe');
 
 //Route::post('/pay/paymentML', [App\Http\Controllers\PayController::class, 'payML'])->name('pay.payML');
 
-Auth::routes(['register' => false]);
+Auth::routes();
 
 
 //Route::view('/', 'home')->name('home');
