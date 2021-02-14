@@ -35,6 +35,6 @@ class CategorySeeder extends Seeder
             'updated_at' => Date::now(),
         ]);
 
-        DB::table('categories')->truncate();
+        //DB::table('categories')->truncate();
     }
 }
