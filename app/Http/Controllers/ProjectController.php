@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ProjectSaved;
 use App\Models\Category;
 use App\Http\Requests\SaveProjectRequest;
 
@@ -9,7 +10,6 @@ use App\Http\Requests\SaveProjectRequest;
 //use App\Images;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
-use App\Providers\App\Events\ProjectSaved;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;

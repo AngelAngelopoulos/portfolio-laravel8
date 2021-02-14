@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers\App\Events;
+namespace App\Events;
 
 use App\Models\Project;
 use Illuminate\Broadcasting\Channel;
@@ -15,7 +15,12 @@ class ProjectSaved
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    /**
+     * @var Project
+     */
     public $project;
+
+
     /**
      * Create a new event instance.
      *
