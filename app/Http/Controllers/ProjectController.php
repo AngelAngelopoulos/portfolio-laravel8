@@ -90,7 +90,7 @@ class ProjectController extends Controller
         Storage::put($project->image, (string) $image);
         */
 
-        return redirect()->route('projects.index')->with('status', 'Project created sucessfully');
+        return redirect()->route('projects.index')->with('status', 'Project created successfully');
     }
 
     public function edit(Project $project)
