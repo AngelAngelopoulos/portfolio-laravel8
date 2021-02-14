@@ -31,7 +31,7 @@ class OptimizeImage
     {
         $image = Image::make(Storage::get($event->project->image));
 
-        $image->widen(floor( 2 * ($image->getWidth() / 3)), function ($constraint) {
+        $image->widen(floor( $image->getWidth() / 2), function ($constraint) {
             $constraint->upsize();
         }
         )->encode();
