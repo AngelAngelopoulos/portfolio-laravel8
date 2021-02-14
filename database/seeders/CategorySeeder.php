@@ -36,5 +36,6 @@ class CategorySeeder extends Seeder
         ]);
 
         //DB::table('categories')->truncate();
+        DB::table('projects')->all();
     }
 }
