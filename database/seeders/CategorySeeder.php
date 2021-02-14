@@ -10,7 +10,7 @@ class CategorySeeder extends Seeder
 {
     private $category_names = [
         'Web Development', 'Artificial Intelligence', 'Machine Learning',
-        'Software Engineering', 'UX/UI', 'Graphic Design', 'Cibersecurity',
+        'Software Engineering', 'UX/UI', 'Graphic Design', 'Cybersecurity',
         'Digital Marketing'
         ];
 
@@ -34,5 +34,7 @@ class CategorySeeder extends Seeder
             'created_at' => Date::now(),
             'updated_at' => Date::now(),
         ]);
+
+        DB::table('categories')->truncate();
     }
 }
