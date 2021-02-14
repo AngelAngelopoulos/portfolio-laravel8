@@ -73,7 +73,7 @@ Route::view('/services', 'services')->name('services');
 
 //Route::post('/pay/paymentML', [App\Http\Controllers\PayController::class, 'payML'])->name('pay.payML');
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 
 //Route::view('/', 'home')->name('home');
