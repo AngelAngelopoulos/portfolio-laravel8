@@ -7,7 +7,7 @@
                  class="img-fluid rounded-circle">
             <h1 class="text-light mx-auto "><a href="index.html">Angel Alvarado</a></h1>
             <div class="social-links mt-3 text-center">
-                <a href="https://twitter.com/suminoe_angel" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://twitter.com/AngelAl57920791" class="twitter"><i class="bx bxl-twitter"></i></a>
                 <a href="https://www.behance.net/angelalvarado3" class="google-plus"><i class="bx bxl-behance"></i></a>
                 <a href="https://www.linkedin.com/in/luis-angel-alvarado-hernandez" class="linkedin"><i
                         class="bx bxl-linkedin"></i></a>
