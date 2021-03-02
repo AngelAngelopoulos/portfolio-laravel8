@@ -107,7 +107,6 @@ const app = new Vue({
     });
 
     // Navigation active state on scroll
-    /*
       var nav_sections = $('section');
       var main_nav = $('.nav-menu, .mobile-nav');
 
@@ -129,7 +128,6 @@ const app = new Vue({
           }
         });
       });
-    */
     // Back to top button
 
     $(window).scroll(function () {
@@ -164,7 +162,7 @@ const app = new Vue({
 
 
     // Porfolio isotope and filter
-    /*
+
   $(window).on('load', function() {
     var portfolioIsotope = $('.portfolio-container').isotope({
       itemSelector: '.portfolio-item',
@@ -187,7 +185,9 @@ const app = new Vue({
     });
   });
 
+
   // Testimonials carousel (uses the Owl Carousel library)
+    /*
   $(".testimonials-carousel").owlCarousel({
     autoplay: true,
     dots: true,
@@ -211,8 +211,7 @@ const app = new Vue({
     dots: true,
     loop: true,
     items: 1
-  });
-*/
+  });*/
 
     // Init AOS
 

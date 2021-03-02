@@ -87,10 +87,10 @@ function setActive($routeName)
 
 <script src="{{ asset('assets/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/counterup/counterup.min.js') }}"></script>
-<script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}" defer></script>
-<script src="{{ asset('assets/vendor/venobox/venobox.min.js') }}" defer></script>
+<script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/venobox/venobox.min.js') }}" ></script>
 <script src="{{ asset('assets/vendor/typed.js/typed.min.js') }}"></script>
-<script src="{{ asset('/assets/vendor/aos/aos.js') }}" defer></script>
+<script src="{{ asset('/assets/vendor/aos/aos.js') }}"></script>
 
 <!-- Template Main JS File -->
 <!--<script src="https://storage.googleapis.com/segment-assets/assets/js/main.js" defer></script>-->
